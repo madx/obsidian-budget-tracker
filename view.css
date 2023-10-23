@@ -1,0 +1,69 @@
+.budget-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4-3);
+}
+
+.budget-view_burndown-chart {
+  border-radius: var(--radius-l);
+  background-color: var(--background-primary);
+  padding: var(--size-4-3);
+  border: var(--prompt-border-width) solid var(--prompt-border-color);
+  height: 380px;
+}
+
+.budget-view_transaction-list {
+  border-radius: var(--radius-l);
+  background-color: var(--background-primary);
+  border: var(--prompt-border-width) solid var(--prompt-border-color);
+  padding: 0;
+}
+
+.budget-view_transaction-list table {
+  width: 100%;
+}
+
+.budget-view_transaction-list table > thead th,
+.budget-view_transaction-list table > thead th:nth-child(2n + 2) {
+  border: none;
+  padding: var(--size-4-3);
+  background-color: var(--background-secondary);
+}
+
+.budget-view_transaction-list table > thead th:first-child {
+  border-top-left-radius: var(--radius-l);
+}
+.budget-view_transaction-list table > thead th:last-child {
+  border-top-right-radius: var(--radius-l);
+}
+
+.budget-view_transaction-list table > tbody td {
+  border: none;
+  padding: var(--size-4-3);
+  border-bottom: var(--table-border-width) solid var(--table-border-color);
+}
+
+.budget-view_transaction-list table .status-column {
+  text-align: center;
+}
+
+.budget-view_transaction-list table .date-column {
+  font-variant-numeric: tabular-nums;
+}
+
+.budget-view_transaction-list table .note-column {
+  color: var(--text-faint);
+}
+
+.budget-view_transaction-list table .amount-column {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.budget-view_transaction-list table .negative-amount {
+  color: #f66151;
+}
+
+.budget-view_transaction-list table .positive-amount {
+  color: #8ff0a4;
+}
