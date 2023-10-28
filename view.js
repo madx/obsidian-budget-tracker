@@ -175,7 +175,8 @@ transactionList.innerHTML = `
     </tr>
   </thead>
   <tbody>
-    ${thisAndNextMonthTransactions
+    ${[...thisAndNextMonthTransactions]
+      .reverse()
       .map(
         (transaction) => `
       <tr>
