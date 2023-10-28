@@ -9,7 +9,7 @@
   background-color: var(--background-primary);
   padding: var(--size-4-3);
   border: var(--prompt-border-width) solid var(--prompt-border-color);
-  height: 380px;
+  height: 500px;
 }
 
 .budget-view_transaction-list {
