@@ -71,7 +71,10 @@ const previousAmount = pastTransactions.reduce(
 );
 
 const currentBalance = allTransactionsUpToNextMonth
-  .filter((transaction) => transaction.date.isSameOrBefore(NOW))
+  .filter(
+    (transaction) =>
+      transaction.date.isSameOrBefore(NOW) && transaction.status === "posted",
+  )
   .reduce((balance, transaction) => balance + transaction.amount, 0);
 
 const burndownChart = {
@@ -123,11 +126,26 @@ const burndownChart = {
         pointBackgroundColor: "#f8e45c",
         label: "",
         data: accumulate(
-          thisAndNextMonthTransactions.map((t) => t.amount),
+          thisAndNextMonthTransactions.map((t) =>
+            t.status === "pending" ? 0 : t.amount,
+          ),
           previousAmount,
         ).map((amount) => formatCents(amount)),
         borderColor: "#f8e45c",
         pointRadius: 3,
+        stepped: "before",
+      },
+      {
+        spanGaps: true,
+        borderWidth: 1,
+        label: "",
+        data: accumulate(
+          thisAndNextMonthTransactions.map((t) => t.amount),
+          previousAmount,
+        ).map((amount) => formatCents(amount)),
+        borderColor: "#f8e45c88",
+        borderDash: [5, 5],
+        pointRadius: 5,
         stepped: "before",
       },
     ],
