@@ -98,6 +98,7 @@ const burndownChart = {
         },
       },
       yAxis: {
+        suggestedMin: 0,
         grid: {
           color: (context) =>
             context.tick.value === 0 ? "#5e5c64" : "transparent", //#262626",
