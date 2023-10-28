@@ -202,12 +202,3 @@ budgetView.appendChild(burndownChartDiv);
 budgetView.appendChild(transactionList);
 container.appendChild(budgetView);
 window.renderChart(burndownChart, burndownChartDiv);
-
-// dv.table(["🏦", "Date", "Tiers", "Catégorie", "Nom", "Montant"], upcoming.map(row => [
-//   getStatusIcon(row.status),
-//   row.date,
-//   row.payee,
-//   row.category,
-//   row.name,
-//   formatCents(row.amount)
-// ]))
